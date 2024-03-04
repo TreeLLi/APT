@@ -84,7 +84,6 @@ def pgd(imgs, targets, model, criterion, eps, eps_step, max_iter, pert=None, ig=
 
 parser = argparse.ArgumentParser()
 parser.add_argument('experiment')
-parser.add_argument('--data-dir', default='data')
 parser.add_argument('-cp','--cls-prompt', default='a photo of a {}')
 parser.add_argument('-ap','--atk-prompt', default=None)
 parser.add_argument('--best-checkpoint', action='store_true')

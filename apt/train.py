@@ -96,7 +96,7 @@ def extend_cfg(cfg):
 
     cfg.DATASET.SUBSAMPLE_CLASSES = "all"  # all, base or new
 
-    # cfg.MODEL.BACKBONE.ROBUST = True
+    cfg.MODEL.BACKBONE.ROBUST = True
     
 def setup_cfg(args):
     cfg = get_cfg_default()

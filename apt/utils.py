@@ -6,7 +6,7 @@ from typing import Tuple, TypeVar
 from torch import Tensor
 
 from clip import clip
-from trainers.coop import PromptLearner, TextEncoder
+from trainers.apt import PromptLearner, TextEncoder
 
 
 mu = (0.48145466, 0.4578275, 0.40821073)

@@ -3,7 +3,6 @@
 # custom config
 DATA=/users/k19010102/project/prompt-adv-rob/CoOp/data
 TRAINER=APT
-EVALUATOR=Classification
 
 DATASET=$1
 CFG=$2  # config file
@@ -36,7 +35,6 @@ else
     python train.py \
     --root ${DATA} \
     --trainer ${TRAINER} \
-    --evaluator ${EVALUATOR}\
     --dataset-config-file configs/datasets/${DATASET}.yaml \
     --config-file configs/trainers/${TRAINER}/${CFG}.yaml \
     --output-dir ${DIR} \
