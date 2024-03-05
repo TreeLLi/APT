@@ -1,4 +1,4 @@
-The instructions below are adapted from [CoOp](https://github.com/KaiyangZhou/CoOp/blob/main/DATASETS.md).
+The instructions below are adapted from [CoOp](https://github.com/KaiyangZhou/CoOp/blob/main/DATASETS.md) with some modification to add few Out-Of-Distribution datasets at the end. 
 
 # How to install datasets
 
@@ -178,3 +178,45 @@ ucf101/
 |–– UCF-101-midframes/
 |–– split_zhou_UCF101.json
 ```
+
+### ImageNet-Sketch
+
+- Download the dataset from https://github.com/HaohanWang/ImageNet-Sketch.
+- Extract the dataset to `$DATA/imagenet-sketch`.
+- Copy `$DATA/imagenet/classnames.txt` to `$DATA/imagenet-sketch/`.
+
+The directory structure should look like
+
+```
+imagenet-sketch/
+|–– images/ # contains 1,000 folders whose names have the format of n*
+|–– classnames.txt
+```
+
+### ImageNet-V2
+
+- Download the dataset from https://huggingface.co/datasets/vaishaal/ImageNetV2/tree/main.
+- Extract the dataset and rename `$DATA/imagenetv2-matched-frequency-format-val`.
+
+The directory structure should look like
+
+```
+imagenetv2-matched-frequency-format-val/
+|–– 1000 folders # named 0-999
+```
+
+### ImageNet-R
+
+- Download the dataset from https://people.eecs.berkeley.edu/~hendrycks/imagenet-r.tar.
+- Extract the dataset and rename `$DATA/imagenet-r`.
+
+The directory structure should look like
+
+```
+imagenet-r/
+|–– folders # named by ImageNet class ID
+```
+
+### ObjectNet
+
+Todo: upload the processed ObjectNet dataset.

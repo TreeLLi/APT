@@ -127,7 +127,7 @@ if __name__ == '__main__':
     num_classes = dm.num_classes
     
     if args.dataset in ['ImageNetR', 'ImageNetA', 'ON'] or (train_dataset == 'ImageNet' and args.dataset is None and args.attack == 'aa'):
-        from oodar_datasets.imagenet import ImageNet
+        from OODRB.imagenet import ImageNet
         if args.dataset == 'ImageNetV2':
             shift = 'v2'
         elif args.dataset == 'ImageNetA':
@@ -139,7 +139,7 @@ if __name__ == '__main__':
         else:
             shift = None
         num_classes = 1000
-        dataset = ImageNet('/scratch/prj/nmes_deep_learning/data',
+        dataset = ImageNet(cfg.DATASET.ROOT,
                            shift,
                            'val',
                            transform=loader.dataset.transform)
