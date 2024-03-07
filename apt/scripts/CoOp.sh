@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # custom config
-DATA=/users/k19010102/project/prompt-adv-rob/CoOp/data
+DATA=TODO_replace_with_data_root_path
 TRAINER=CoOp
 
 DATASET=$1

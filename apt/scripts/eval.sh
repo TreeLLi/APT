@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # custom config
-DATA=/users/k19010102/project/prompt-adv-rob/CoOp/data
-TRAINER=CoOpAT
+DATA=TODO_replace_with_data_root_path
+TRAINER=APT
 SHOTS=16
 NCTX=16
 CSC=False
