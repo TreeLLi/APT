@@ -13,9 +13,9 @@ Follow [DATASETS.md](DATASETS.md) to install the datasets. After successfully se
 
 ### Pre-trained Robust CLIP Backbone
 
-We adopt as backbone the pre-trained adversarially-robust CLIP models from [TeCoA](https://github.com/cvlab-columbia/ZSRobust4FoundationModel). To reproduce our results, the pretrained checkpoints should be downloaded and placed under the directory `/backbone`. The code currently supports two architectures: ViT-B/32 (named `vitb32`) and ResNet50 (named `rn50`). Taking an example of tuning ViT-B/32 at epsilon=4/255, the directory of the checkpoint is `/backbone/vitb32_eps4.pth.tar`. Note that our code can be easily adapted to load other pre-trained models as backbone. 
+We adopt as backbone the pre-trained adversarially-robust CLIP models from [TeCoA](https://github.com/cvlab-columbia/ZSRobust4FoundationModel). The used pre-trained weights are provided [here](https://emckclac-my.sharepoint.com/:f:/g/personal/k19010102_kcl_ac_uk/EmZ98eFLv71FqQyqPLvWNTkBYNAKPyx_wYEDjNPx7smKCA?e=8AB51S). To run the code, the pre-trained backbone models should be placed under the directory `/backbone`.  The code currently supports two architectures: ViT-B/32 (named `vitb32`) and ResNet50 (named `rn50`). Taking an example of tuning ViT-B/32 at epsilon=4/255, the path to the checkpoint is `/backbone/vitb32_eps4.pth.tar`. Note that our code can be easily adapted to load other pre-trained models as backbone.
 
-## APT: Adversarial Prompt Tuning
+## Adversarial Prompt Tuning
 
 The following command runs APT to tune text prompt using an experiment setting specified by `APT/configs/trainers/APT/vit_b32_ep50.yaml`:
 
@@ -23,7 +23,7 @@ The following command runs APT to tune text prompt using an experiment setting s
 bash scripts/APT.sh imagenet vit_b32_ep50 end 16 16 False 4 2.67 3 0 onfly 0
 ```
 
-The above parameters in order corresponding to:
+The above arguments correspond to in order:
 
 1. dataset ID. The list of supported dataset ID is given by the name of dataset source code files under the directory `APT/datasets`.
 2. training configuration identifier. For full specification, please refer to the corresponding file. There are other predefined configurations under `APT/configs/trainers/APT`.
@@ -37,6 +37,10 @@ The above parameters in order corresponding to:
 10. seed of run.
 11. the prompting strategy: "perturbed", "constant" and "onfly"
 12. the step size, `\alpha`, for perturbing text prompt if prompting strategy "perturbed" used.
+
+### Pre-trained Prompt Weights:
+
+To facilitate reproducibility, the pre-trained text prompt weights are provided [here](https://emckclac-my.sharepoint.com/:f:/g/personal/k19010102_kcl_ac_uk/EmZ98eFLv71FqQyqPLvWNTkBYNAKPyx_wYEDjNPx7smKCA). 
 
 ## Adversarial Evaluation
 

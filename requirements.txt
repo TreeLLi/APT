@@ -2,4 +2,4 @@ ftfy
 regex
 tqdm
 torchattacks
-autoattack
+git+https://github.com/fra31/auto-attack
