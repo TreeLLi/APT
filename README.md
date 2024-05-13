@@ -1,5 +1,5 @@
 # APT: Adversarial Prompt Tuning
-The official code of the paper "One Prompt Word is Enough to Boost Adversarial Robustness for Pre-trained Vision-Language Models" which is accepted by the main conference of CVPR 2024.
+The official code of the paper "One Prompt Word is Enough to Boost Adversarial Robustness for Pre-trained Vision-Language Models" which is accepted by the main conference of CVPR 2024. Arxiv: https://arxiv.org/abs/2403.01849.
 
 ## Preparation
 
@@ -13,11 +13,11 @@ Follow [DATASETS.md](DATASETS.md) to install the datasets. After successfully se
 
 ### Pre-trained Robust CLIP Backbone
 
-We adopt as backbone the pre-trained adversarially-robust CLIP models from [TeCoA](https://github.com/cvlab-columbia/ZSRobust4FoundationModel). The used pre-trained weights are provided [here](https://emckclac-my.sharepoint.com/:f:/g/personal/k19010102_kcl_ac_uk/EmZ98eFLv71FqQyqPLvWNTkBYNAKPyx_wYEDjNPx7smKCA?e=8AB51S). To run the code, the pre-trained backbone models should be placed under the directory `/backbone`.  The code currently supports two architectures: ViT-B/32 (named `vitb32`) and ResNet50 (named `rn50`). Taking an example of tuning ViT-B/32 at epsilon=4/255, the path to the checkpoint is `/backbone/vitb32_eps4.pth.tar`. Note that our code can be easily adapted to load other pre-trained models as backbone.
+We adopt as backbone the pre-trained adversarially-robust CLIP models from [TeCoA](https://github.com/cvlab-columbia/ZSRobust4FoundationModel). The used pre-trained weights are provided [here](https://emckclac-my.sharepoint.com/:f:/g/personal/k19010102_kcl_ac_uk/EmZ98eFLv71FqQyqPLvWNTkBYNAKPyx_wYEDjNPx7smKCA?e=8AB51S). To run the code, the pre-trained backbone models should be placed under the directory `/backbone`.  The code currently supports two architectures: ViT-B/32 (named `vitb32`) and ResNet50 (named `rn50`). Taking an example of tuning ViT-B/32 at epsilon=4/255, the path to the checkpoint is `/apt/backbone/vitb32_eps4.pth.tar`. Note that our code can be easily adapted to load other pre-trained models as backbone.
 
 ## Adversarial Prompt Tuning
 
-The following command runs APT to tune text prompt using an experiment setting specified by `APT/configs/trainers/APT/vit_b32_ep50.yaml`:
+The following command runs APT to tune text prompt using an experiment setting specified by `apt/configs/trainers/APT/vit_b32_ep50.yaml`:
 
 ```bash
 bash scripts/APT.sh imagenet vit_b32_ep50 end 16 16 False 4 2.67 3 0 onfly 0
@@ -25,8 +25,8 @@ bash scripts/APT.sh imagenet vit_b32_ep50 end 16 16 False 4 2.67 3 0 onfly 0
 
 The above arguments correspond to in order:
 
-1. dataset ID. The list of supported dataset ID is given by the name of dataset source code files under the directory `APT/datasets`.
-2. training configuration identifier. For full specification, please refer to the corresponding file. There are other predefined configurations under `APT/configs/trainers/APT`.
+1. dataset ID. The list of supported dataset ID is given by the name of dataset source code files under the directory `apt/datasets`.
+2. training configuration identifier. For full specification, please refer to the corresponding file. There are other predefined configurations under `apt/configs/trainers/APT`.
 3. the position of class token
 4. the number of context vectors, `M`
 5. the number of shots, `N`, `-1` for tuning with entire training set.
@@ -48,7 +48,7 @@ To facilitate reproducibility, the pre-trained text prompt weights are provided 
 
 The following command evaluates the tuned text prompt against PGD attack on the test set of the same dataset as training:
 
-```python
+```bash
 python evaluate.py path_to_checkpoint --cls-prompt prompter --attack pgd
 ```
 
@@ -64,7 +64,7 @@ The evaluation result will be saved under the provided `path_to_checkpoint` dire
 
 The following command evaluates the tuned text prompt against PGD attack on the other dataset, OxfordFlowers in this case:
 
-```python
+```bash
 python evaluate.py path_to_checkpoint --dataset --cls-prompt prompter --attack pgd
 ```
 
@@ -86,7 +86,7 @@ We sincerely appreciate their help!
 ```
 @inproceedings{li2024apt,
     title={One Prompt Word is Enough to Boost Adversarial Robustness for Pre-trained Vision-Language Models},
-    author={Lin Li, Haoyan Guan, Jianing Qiu, Michael Spratling},
+    author={Lin Li*, Haoyan Guan*, Jianing Qiu, Michael Spratling},
     booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
     year={2024}
 }
