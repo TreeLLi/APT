@@ -1,6 +1,8 @@
 # APT: Adversarial Prompt Tuning
 The official code of the paper "One Prompt Word is Enough to Boost Adversarial Robustness for Pre-trained Vision-Language Models" which is accepted by the main conference of CVPR 2024. Arxiv: https://arxiv.org/abs/2403.01849.
 
+![one word boost](assets/one_word_boost.png)
+
 ## Preparation
 
 ### Code
@@ -17,7 +19,7 @@ We adopt as backbone the pre-trained adversarially-robust CLIP models from [TeCo
 
 ## Adversarial Prompt Tuning
 
-The following command runs APT to tune text prompt using an experiment setting specified by `apt/configs/trainers/APT/vit_b32_ep50.yaml`:
+The following command (being executed under the directory `/apt`) runs APT to tune text prompt using an experiment setting specified by `/apt/configs/trainers/APT/vit_b32_ep50.yaml`:
 
 ```bash
 bash scripts/APT.sh imagenet vit_b32_ep50 end 16 16 False 4 2.67 3 0 onfly 0
