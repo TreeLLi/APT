@@ -1,5 +1,9 @@
 # APT: Adversarial Prompt Tuning
-The official code of the paper "One Prompt Word is Enough to Boost Adversarial Robustness for Pre-trained Vision-Language Models" which is accepted by the main conference of CVPR 2024. Arxiv: https://arxiv.org/abs/2403.01849.
+The official code of the paper "One Prompt Word is Enough to Boost Adversarial Robustness for Pre-trained Vision-Language Models" which is accepted by the main conference of CVPR 2024. 
+
+**Abstract:** Large pre-trained Vision-Language Models (VLMs) like CLIP, despite having remarkable generalization ability, are highly vulnerable to adversarial examples. This work studies the adversarial robustness of VLMs from the novel perspective of the text prompt instead of the extensively studied model weights (frozen in this work). We first show that **the effectiveness of both adversarial attack and defense are sensitive to the used text prompt**. Inspired by this, we **propose a method to improve resilience to adversarial attacks by learning a robust text prompt for VLMs**. The proposed method, named Adversarial Prompt Tuning (APT), is effective while being both computationally and data efficient. Extensive experiments are conducted across 15 datasets and 4 data sparsity schemes (from 1-shot to full training data settings) to show APT's superiority over hand-engineered prompts and other state-of-the-art adaption methods. APT demonstrated excellent abilities in terms of the in-distribution performance and the generalization under input distribution shift and across datasets. Surprisingly, by simply adding one learned word to the prompts, APT can significantly boost the accuracy and robustness ($\epsilon=4/255$) over the hand-engineered prompts by +13\% and +8.5\% on average respectively. The improvement further increases, in our most effective setting, to +26.4\% for accuracy and +16.7\% for robustness.
+
+Arxiv: https://arxiv.org/abs/2403.01849.
 
 ![one word boost](assets/one_word_boost.png)
 
@@ -78,8 +82,8 @@ The evaluation result will be saved under the provided `path_to_checkpoint` dire
 
 The code is heavily built on top of the following projects:
 
-* [CoOp](https://github.com/KaiyangZhou/CoOp)
-* [OODRobustBench](https://arxiv.org/abs/2310.12793)
+* [CoOp (IJCV 2022)](https://github.com/KaiyangZhou/CoOp)
+* [OODRobustBench (ICML2024 and ICLRW-DMLR 2024)](https://github.com/OODRobustBench/OODRobustBench)
 
 We sincerely appreciate their help!
 
