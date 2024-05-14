@@ -1,4 +1,4 @@
-The instructions below are adapted from [CoOp](https://github.com/KaiyangZhou/CoOp/blob/main/DATASETS.md) with some modification to add few Out-Of-Distribution datasets at the end. 
+The instructions below are adapted from [CoOp](https://github.com/KaiyangZhou/CoOp/blob/main/DATASETS.md) with some modification to add few Out-Of-Distribution datasets at the end. It appears that the official link provided may be invalid. You can download the required data from various platforms and then follow the file structure to place the corresponding data accordingly.
 
 # How to install datasets
 
