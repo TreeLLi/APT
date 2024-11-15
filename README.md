@@ -71,10 +71,10 @@ The evaluation result will be saved under the provided `path_to_checkpoint` dire
 The following command evaluates the tuned text prompt against PGD attack on the other dataset, OxfordFlowers in this case:
 
 ```bash
-python evaluate.py path_to_checkpoint --dataset --cls-prompt prompter --attack pgd
+python evaluate.py path_to_checkpoint --dataset OxfordFlowers --cls-prompt prompter --attack pgd
 ```
 
-* `--dataset` specifies the target dataset to be evaluated on. Note that the naming of datasets is different from the ones defined [here](#Tuning-Text-Prompt-by-APT).
+* `--dataset` specifies the target dataset to be evaluated on. Note that the naming of datasets can be found in the corresponding `.yaml` files [here](https://github.com/TreeLLi/APT/tree/main/apt/configs/datasets), which are different from the ones defined [here](#Adversarial Prompt Tuning).
 
 The evaluation result will be saved under the provided `path_to_checkpoint` directory in a name of `dist_shift.yaml`.
 
