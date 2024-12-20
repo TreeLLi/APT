@@ -398,7 +398,7 @@ class APT(CoOp):
             self.scaler.scale(loss).backward()
             self.scaler.step(self.optim)
             self.scaler.update()
-        elif self.cfg.AT.PROMPT == 'optimized':
+        elif self.cfg.AT.PROMPT == 'perturbed':
             state = copy.deepcopy(self.model.prompt_learner.state_dict())
             delta = torch.zeros_like(image).uniform_(-eps, eps)
             for _ in range(steps):
