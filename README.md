@@ -19,7 +19,7 @@ Follow [DATASETS.md](DATASETS.md) to install the datasets. After successfully se
 
 ### Pre-trained Robust CLIP Backbone
 
-We adopt as backbone the pre-trained adversarially-robust CLIP models from [TeCoA](https://github.com/cvlab-columbia/ZSRobust4FoundationModel). The used pre-trained weights are provided [here](https://emckclac-my.sharepoint.com/:f:/g/personal/k19010102_kcl_ac_uk/EmZ98eFLv71FqQyqPLvWNTkBYNAKPyx_wYEDjNPx7smKCA?e=8AB51S). To run the code, the pre-trained backbone models should be placed under the directory `/backbone`.  The code currently supports two architectures: ViT-B/32 (named `vitb32`) and ResNet50 (named `rn50`). Taking an example of tuning ViT-B/32 at epsilon=4/255, the path to the checkpoint is `/apt/backbone/vitb32_eps4.pth.tar`. Note that our code can be easily adapted to load other pre-trained models as backbone.
+We adopt as backbone the pre-trained adversarially-robust CLIP models from [TeCoA](https://github.com/cvlab-columbia/ZSRobust4FoundationModel). The used pre-trained weights are provided [here](https://huggingface.co/TreeLLi/Adversarial-Prompt-Tuning/tree/main/backbone). To run the code, the pre-trained backbone models should be placed under the directory `/backbone`.  The code currently supports two architectures: ViT-B/32 (named `vitb32`) and ResNet50 (named `rn50`). Taking an example of tuning ViT-B/32 at epsilon=4/255, the path to the checkpoint is `/apt/backbone/vitb32_eps4.pth.tar`. Note that our code can be easily adapted to load other pre-trained models as backbone.
 
 ## Adversarial Prompt Tuning
 
